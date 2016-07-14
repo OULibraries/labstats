@@ -45,14 +45,14 @@ function labstats_stats_views_data() {
     ),
   );
   $data['labstats_stats']['availableCount'] = array(
-    'title' => t('Available Count'),
+    'title' => t('Available'),
     'help' => t('The number of available units'),
     'field' => array(
       'handler' => 'labstats_stats_handler_field',
     ),
   );
   $data['labstats_stats']['unavailableCount'] = array(
-    'title' => t('Unavailable Count'),
+    'title' => t('Unavailable'),
     'help' => t('The number of unavailable units'),
     'field' => array(
       'handler' => 'labstats_stats_handler_field',
@@ -82,6 +82,13 @@ function labstats_stats_views_data() {
   $data['labstats_stats']['parentGroupName'] = array(
     'title' => t('Parent Group Name'),
     'help' => t('Name of the Parent Group'),
+    'field' => array(
+      'handler' => 'labstats_stats_handler_field',
+    ),
+  );
+  $data['labstats_stats']['offCount'] = array(
+    'title' => t('Off Count'),
+    'help' => t('The number of units turned off'),
     'field' => array(
       'handler' => 'labstats_stats_handler_field',
     ),
