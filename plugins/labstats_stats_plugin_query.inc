@@ -26,8 +26,9 @@ class labstats_stats_plugin_query extends views_plugin_query {
     $parentGroup = $this->options['parentGroupName'];
     $group = $this->options['groupName'];
 
-    dpm($results);
-
+    //loop through results...we don't want what they don't ask for
+    //so if it's not what they entered in the query settings
+    //then we just continue on to the next one
     foreach ($results as $entry){
       $row = new stdClass();
       if ($entry->parentGroupName !== $parentGroup){
@@ -45,8 +46,6 @@ class labstats_stats_plugin_query extends views_plugin_query {
       $row->percentInUse = floor(($entry->percentInUse)*100);
       $row->groupDescription = $entry->goupDescription;
       $row->unavailableCount = $entry->unavailableCount;
-      dpm($row->availableCount);
-      dpm($row->inUseCount);
       $view->result[] = $row;
     }
   }
