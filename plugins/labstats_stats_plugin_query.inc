@@ -47,7 +47,7 @@ class labstats_stats_plugin_query extends views_plugin_query {
       $row->groupDescription = isset($entry->goupDescription) ? $entry->groupDescription : '';
       $row->unavailableCount = isset($entry->unavailableCount) ? $entry->unavailableCount : '-';
       $view->result[] = $row;
-    } 
+    }
   }
 
   /**
