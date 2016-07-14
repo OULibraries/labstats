@@ -37,15 +37,15 @@ class labstats_stats_plugin_query extends views_plugin_query {
       if ($entry->groupName !== $group && $group !== '') {
         continue;
       }
-      $row->groupName = $entry->groupName;
-      $row->parentGroupName = $entry->parentGroupName;
-      $row->offCount = $entry->offCount;
-      $row->availableCount = $entry->availableCount;
-      $row->inUseCount = $entry->inUseCount;
-      $row->totalCount = $entry->totalCount;
-      $row->percentInUse = floor(($entry->percentInUse)*100);
-      $row->groupDescription = $entry->goupDescription;
-      $row->unavailableCount = $entry->unavailableCount;
+      $row->groupName = isset($entry->groupName) ? $entry->groupname : '';
+      $row->parentGroupName = isset($entry->parentGroupName) ? $entry->parentGroupName : '';
+      $row->offCount = isset($entry->offCount) ? $entry->offCount : '-';
+      $row->availableCount = isset($entry->availableCount) ? $entry->availableCount : '-';
+      $row->inUseCount = isset($entry->inUseCount) ? $entry->inUseCount : '-';
+      $row->totalCount = isset($entry->totalCount) ? $entry->totalCount : '-';
+      $row->percentInUse = isset($entry->percentInUse) ? floor(($entry->percentInUse)*100) : '-';
+      $row->groupDescription = isset($entry->goupDescription) ? $entry->groupDescription : '';
+      $row->unavailableCount = isset($entry->unavailableCount) ? $entry->unavailableCount : '-';
       $view->result[] = $row;
     }
   }
