@@ -14,11 +14,18 @@ class labstats_stats_plugin_query extends views_plugin_query {
    * gets number live counts from labstats
    */
   function execute(&$view) {
+
+    //@todo add better error handling here
+    //setting server variable
+    $myLabstats = variable_get('labstats_stats_server', "");
+    if ($myLabstats == '') {
+      return;
+    }
     // Disabled Cache to ensure the data is current. could result in slower load times
     $ini = ini_set("soap.wsdl_cache_enabled", "0");
 
     //Creates a SOAP Connection (Change URL to match your installation
-    $client = new SoapClient("http://labstats.ou.edu/WebServices/Statistics.asmx?WSDL");
+    $client = new SoapClient(variable_get('labstats_stats_server') . '/WebServices/Statistics.asmx?WSDL');
 
     // Sets variable results to equal the results from our XML request
     $results = $client->GetGroupedCurrentStats()->GetGroupedCurrentStatsResult->GroupStat;
@@ -37,7 +44,7 @@ class labstats_stats_plugin_query extends views_plugin_query {
       if ($entry->groupName !== $group && $group !== '') {
         continue;
       }
-      $row->groupName = isset($entry->groupName) ? $entry->groupname : '';
+      $row->groupName = isset($entry->groupName) ? $entry->groupName : '';
       $row->parentGroupName = isset($entry->parentGroupName) ? $entry->parentGroupName : '';
       $row->offCount = isset($entry->offCount) ? $entry->offCount : '-';
       $row->availableCount = isset($entry->availableCount) ? $entry->availableCount : '-';
