@@ -72,6 +72,48 @@ function labstats_stats_views_data() {
       'handler' => 'labstats_stats_handler_field',
     ),
   );
+  $data['labstats_stats']['totalInUse'] = array(
+    'title' => t('Total In Use'),
+    'help' => t('The total number of units in use in all areas'),
+    'field' => array(
+      'handler' => 'labstats_stats_handler_field',
+    ),
+  );
+  $data['labstats_stats']['totalAvailable'] = array(
+    'title' => t('Total Available'),
+    'help' => t('The total number of units available in all areas'),
+    'field' => array(
+      'handler' => 'labstats_stats_handler_field',
+    ),
+  );
+  $data['labstats_stats']['totalOff'] = array(
+    'title' => t('Total Off'),
+    'help' => t('The total number of units off in all areas'),
+    'field' => array(
+      'handler' => 'labstats_stats_handler_field',
+    ),
+  );
+  $data['labstats_stats']['totalTotal'] = array(
+    'title' => t('Total of Totals'),
+    'help' => t('The total of all the totals in all areas'),
+    'field' => array(
+      'handler' => 'labstats_stats_handler_field',
+    ),
+  );
+  $data['labstats_stats']['totalUnavailable'] = array(
+    'title' => t('Total Unavailable'),
+    'help' => t('The total number of units unavailable in all areas'),
+    'field' => array(
+      'handler' => 'labstats_stats_handler_field',
+    ),
+  );
+  $data['labstats_stats']['totalPercent'] = array(
+    'title' => t('Total Percent In Use'),
+    'help' => t('The percent of all in use'),
+    'field' => array(
+      'handler' => 'labstats_stats_handler_field',
+    ),
+  );
   $data['labstats_stats']['percentInUse'] = array(
     'title' => t('Percent in Use'),
     'help' => t('The percent of total number of units in this area that are in use'),

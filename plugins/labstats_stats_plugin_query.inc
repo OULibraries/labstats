@@ -33,6 +33,12 @@ class labstats_stats_plugin_query extends views_plugin_query {
     $parentGroup = $this->options['parentGroupName'];
     $group = $this->options['groupName'];
 
+    $totalInUse = 0;
+    $totalAvailable = 0;
+    $totalOff = 0;
+    $totalTotal = 0;
+    $totalUnavailable = 0;
+
     //loop through results...we don't want what they don't ask for
     //so if it's not what they entered in the query settings
     //then we just continue on to the next one
@@ -44,6 +50,12 @@ class labstats_stats_plugin_query extends views_plugin_query {
       if ($entry->groupName !== $group && $group !== '') {
         continue;
       }
+      $totalInUse += $entry->inUseCount;
+      $totalAvailable += $entry->availableCount;
+      $totalOff += $entry->offCount;
+      $totalTotal += $entry->totalCount;
+      $totalUnavailable += $entry->unavailableCount;
+
       $row->groupName = isset($entry->groupName) ? $entry->groupName : '';
       $row->parentGroupName = isset($entry->parentGroupName) ? $entry->parentGroupName : '';
       $row->offCount = isset($entry->offCount) ? $entry->offCount : '-';
@@ -55,6 +67,14 @@ class labstats_stats_plugin_query extends views_plugin_query {
       $row->unavailableCount = isset($entry->unavailableCount) ? $entry->unavailableCount : '-';
       $view->result[] = $row;
     }
+    $row = new stdClass();
+    $row->totalInUse = $totalInUse;
+    $row->totalAvailable = $totalAvailable;
+    $row->totalOff = $totalOff;
+    $row->totalTotal = $totalTotal;
+    $row->totalUnavailable = $totalUnavailable;
+    $row->totalPercent = floor(($totalInUse/$totalTotal) * 100);
+    $view->result[] = $row;
   }
 
   /**
