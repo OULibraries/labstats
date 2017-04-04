@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * Implementation of hook_views_api().
+ */
+function labstats_stats_views_api() {
+  return array(
+    'api' => 3.0
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function labstats_stats_menu() {
+  /* proxy settings */
+  $items['admin/config/system/labstats']
+    = array(
+    'title' => 'Labstats report settings',
+    'description' => 'Configure settings for Labstats reports',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('labstats_stats_settings'),
+    'access arguments' => array('administer labstats_stats settings'),
+    'weight' => -10,
+  );
+
+  return $items;
+}
+
+function labstats_stats_permission() {
+  $modperms = array(
+    'administer labstats_stats settings' => array(
+      'title' => t('Administer Labstats reports'),
+    ),
+  );
+  return $modperms;
+}
+
+function labstats_stats_settings() {
+
+  $form = array();
+
+  $form['labstats_stats_server'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Labstats Server'),
+    '#default_value' => variable_get('labstats_stats_server', ""),
+    '#description' => t("Server used for the Labstats api"),
+    '#required' => TRUE,
+  );
+
+  return system_settings_form($form);
+
+}

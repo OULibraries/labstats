@@ -1,0 +1,10 @@
+name = Labstats
+description = integration of Labstats through the api
+
+core = 7.x
+package = Drupal 7 Development
+
+files[] = labstats_stats.module
+files[] = labstats_stats.views.inc
+files[] = handlers/labstats_stats_handler_field.inc
+files[] = plugins/labstats_stats_plugin_query.inc
