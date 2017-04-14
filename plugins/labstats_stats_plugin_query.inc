@@ -42,8 +42,6 @@ class labstats_stats_plugin_query extends views_plugin_query {
 
     $jsondump = json_decode($newfile);
 
-    dpm($jsondump);
-    dpm($jsondump->InUse);
 
 //    var_dump(stream_get_contents($stream));
 //    $objecttry = stream_get_contents($stream);
