@@ -51,3 +51,15 @@ function labstats_stats_settings() {
   return system_settings_form($form);
 
 }
+
+/**
+ * Implements hook_block_info().
+ */
+function labstats_stats_block_info() {
+  $blocks = array();
+  $blocks['labstats_block'] = array(
+    'info' => t('My labstats Custom Block'),
+  );
+
+  return $blocks;
+}
