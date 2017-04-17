@@ -4,14 +4,6 @@ drupal_add_css('http://labstats.ou.edu/Content/MapViewer.css', 'external');
 drupal_add_js('https://cdn.jsdelivr.net/excanvas/r3/excanvas.compiled.js', 'external');
 drupal_add_js('http://labstats.ou.edu/Scripts/MapViewer.js', 'external');
 
-//drupal_add_js("jQuery(document).ready(function () {
-//              $('#mapTarget').LabMap({
-//			mapId: 1004,
-//			authId: 'acf442ce-27d8-406e-bbf5-98a438d13b68',
-//			domain: 'http://labstats.ou.edu'
-//		});
-//              });", 'inline');
-
 /**
  * Implements hook_views_plugins().
  */
