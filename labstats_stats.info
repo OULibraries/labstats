@@ -8,3 +8,4 @@ files[] = labstats_stats.module
 files[] = labstats_stats.views.inc
 files[] = handlers/labstats_stats_handler_field.inc
 files[] = plugins/labstats_stats_plugin_query.inc
+files[] = labstats_stats.js
