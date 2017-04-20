@@ -48,18 +48,14 @@ function labstats_stats_settings() {
     '#required' => TRUE,
   );
 
-  return system_settings_form($form);
-
-}
-
-/**
- * Implements hook_block_info().
- */
-function labstats_stats_block_info() {
-  $blocks = array();
-  $blocks['labstats_block'] = array(
-    'info' => t('My labstats Custom Block'),
+  $form['labstats_stats_authID'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Labstats Authorization ID'),
+    '#default_value' => variable_get('labstats_stats_authID', ""),
+    '#description' => t("The authorization ID for labstats"),
+    '#required' => TRUE,
   );
 
-  return $blocks;
+  return system_settings_form($form);
+
 }
