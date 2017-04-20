@@ -23,7 +23,6 @@ Drupal.behaviors.oulib_bento = {
             modal = document.getElementById(this.id + '-modal');
 
             section = $(this).data('id');
-            console.log(section);
 
             switch(section) {
                 case 'Architecture':
@@ -57,9 +56,11 @@ Drupal.behaviors.oulib_bento = {
             // When the user clicks on the button, open the modal
             modal.style.display = "block";
 
+            // Get the authorization ID from the config settings in drupal
+            var authID = Drupal.settings.labstats_stats.authID;
              $('#mapTarget').LabMap({
                     mapId: mapID,
-                    authId: 'acf442ce-27d8-406e-bbf5-98a438d13b68',
+                    authId: authID,
                     domain: 'https://labstats.ou.edu'
                 });
         });
