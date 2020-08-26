@@ -61,7 +61,7 @@ console.log(section);
             console.log(authID);
              $('#mapTarget').LabMap({
                     mapId: mapID,
-                    authId: 'acf442ce-27d8-406e-bbf5-98a438d13b68',
+                    authId: authID,
                     domain: 'https://labstats.ou.edu'
                 });
         });
