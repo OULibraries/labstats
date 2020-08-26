@@ -1,0 +1,29 @@
+#avail-comps {
+    color: #569656;
+    font-weight: bold;
+    padding: 0 15px;
+}
+
+#unavail-comps {
+    color: #6D9DD0;
+    font-weight: bold;
+    padding: 0 15px;
+}
+
+#off-comps {
+    color: #979797;
+    font-weight: bold;
+    padding: 0 15px;
+}
+
+#section-comps {
+    font-family: 'Droid Sans';
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width: 50% !important;
+}
