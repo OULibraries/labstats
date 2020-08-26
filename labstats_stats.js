@@ -23,10 +23,11 @@ Drupal.behaviors.oulib_bento = {
             modal = document.getElementById(this.id + '-modal');
 
             section = $(this).data('id');
+console.log(section);
 
             switch(section) {
                 case 'Architecture':
-                    mapID = 1004;
+                    mapID = 1049;
                     break;
                 case 'Bizzell':
                     mapID = 1003;
@@ -55,9 +56,9 @@ Drupal.behaviors.oulib_bento = {
 
             // When the user clicks on the button, open the modal
             modal.style.display = "block";
-
             // Get the authorization ID from the config settings in drupal
             var authID = Drupal.settings.labstats_stats.authID;
+            console.log(authID);
              $('#mapTarget').LabMap({
                     mapId: mapID,
                     authId: authID,
@@ -68,7 +69,6 @@ Drupal.behaviors.oulib_bento = {
         // Click the ok button to close the modal
         $('.search-modal-ok', context).click(function (event) {
             event.preventDefault();
-
             modal.style.display = 'none';
         });
 
@@ -81,7 +81,7 @@ Drupal.behaviors.oulib_bento = {
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
-            if (event.target == modal) {
+            if (event.target === modal) {
                 modal.style.display = "none";
             }
         };
