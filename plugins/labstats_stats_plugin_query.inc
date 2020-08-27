@@ -48,7 +48,7 @@ class labstats_stats_plugin_query extends views_plugin_query {
     $newfile = file_get_contents($url, false, $context);
 
     $jsondump = json_decode($newfile);
-
+dsm($jsondump);
     $parentGroup = $this->options['parentGroupName'];
     $group = $this->options['groupName'];
 //
