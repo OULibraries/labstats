@@ -57,12 +57,14 @@ Drupal.behaviors.oulib_bento = {
             modal.style.display = "block";
             // Get the authorization ID from the config settings in drupal
             var authID = Drupal.settings.labstats_stats.authID;
-            console.log(mapID);
-             $("#mapTarget").LabMap({
-                    mapId: mapID,
-                    authId: authID,
-                    domain: "https://labstats.ou.edu"
-                });
+
+            $("#mapTarget").LabMap({
+                mapId: mapID,
+                authId: authID,
+                domain: "https://labstats.ou.edu",
+                update: false,
+                drawn: false
+            });
         });
 
         // Click the ok button to close the modal
