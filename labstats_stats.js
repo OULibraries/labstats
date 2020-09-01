@@ -23,13 +23,16 @@ Drupal.behaviors.oulib_bento = {
             modal = document.getElementById(this.id + "-modal");
 
             section = $(this).data("id");
-console.log(section);
+
+            var section_name = section;
+
             switch(section) {
                 case "Architecture":
                     mapID = 1049;
                     break;
                 case "Learning":
                     mapID = 1050;
+                    section_name = "Learning Lab";
                     break;
                 case "EIC":
                     mapID = 1051;
@@ -39,10 +42,12 @@ console.log(section);
                     break;
                 case "Fine":
                     mapID = 1053;
+                    section_name = "Fine Arts";
                     break;
                 case "Fine Arts Library":
                     mapID = 1053;
                     break;
+                    section_name = "Fine Arts";
                 case "Geology":
                     mapID = 1054;
                     break;
@@ -65,6 +70,17 @@ console.log(section);
                 update: false,
                 drawn: false
             });
+
+            $(".modal_header_text").text('Computer Map for '+section_name);
+
+            setTimeout(function(){
+                var mapWidth = $('#mapTarget').width();
+                mapWidth = mapWidth + 15;
+                var body_width = $('.modal-body').width();
+
+                $('.modal-header').css('width', mapWidth);
+                $('.modal_header_text').css('width', body_width);
+            },1000);
         });
 
         // Click the ok button to close the modal
