@@ -1,23 +1,24 @@
 #avail-comps {
     color: #569656;
     font-weight: bold;
-    padding: 0 15px;
 }
 
 #unavail-comps {
     color: #6D9DD0;
     font-weight: bold;
-    padding: 0 15px;
 }
 
 #off-comps {
     color: #979797;
     font-weight: bold;
-    padding: 0 15px;
 }
 
 #section-comps {
     font-family: 'Droid Sans';
+}
+
+.modal {
+    overflow-y: initial !important;
 }
 
 .modal-content {
@@ -26,8 +27,45 @@
     margin: 15% auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     width: 50% !important;
+    overflow-y: auto;
 }
 
-#mapTarget {
-    width: 100% !important;
+.legend_row {
+    margin-top: 5px;
+}
+
+.content-border {
+    background-color: #fff;
+    border: 1px solid #c9c9c9;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px #eaeaea;
+    margin-bottom: 10px;
+    padding: 15px 15px 15px 25px;
+}
+
+.labstats_td h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #5a8ba8;
+    background-color: transparent;
+}
+
+.labstats_text, .labstats_text h2 {
+    font-weight: bold;
+    color: #767676;
+}
+
+#avail-comps-icons .legend_computer_icon {
+    margin-left: 10px;
+}
+
+img.legend_computer_icon {
+    width: 50px;
+    margin-bottom: 3px;
+    display: block;
+}
+
+.map_legend_text {
+    display: block;
 }
