@@ -23,12 +23,12 @@ Drupal.behaviors.oulib_bento = {
             modal = document.getElementById(this.id + "-modal");
 
             section = $(this).data("id");
-
+console.log(section);
             switch(section) {
                 case "Architecture":
                     mapID = 1049;
                     break;
-                case "Bizzell":
+                case "Learning":
                     mapID = 1050;
                     break;
                 case "EIC":
@@ -37,7 +37,7 @@ Drupal.behaviors.oulib_bento = {
                 case "Engineering":
                     mapID = 1052;
                     break;
-                case "Fine Arts":
+                case "Fine":
                     mapID = 1053;
                     break;
                 case "Fine Arts Library":
