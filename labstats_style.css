@@ -66,6 +66,10 @@ img.legend_computer_icon {
     display: block;
 }
 
+p.row.legend_row {
+    margin-left: 5px;
+}
+
 .map_legend_text {
     display: block;
 }
