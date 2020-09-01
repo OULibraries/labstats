@@ -21,6 +21,10 @@
     overflow-y: initial !important;
 }
 
+.modal-header {
+    position: fixed;
+}
+
 .modal-content {
     position: relative;
     background-color: #fefefe;
@@ -30,12 +34,20 @@
     overflow-y: auto;
 }
 
+@media only screen and (max-width: 600px)  {
+    .modal-content {
+        width: 90% !important;
+    }
+}
+
 .modal-body {
-    margin-top: 70px;
+    margin-top: 120px;
+    padding: 15px 15px 15px 0 !important;
 }
 
 .legend_row {
-    margin-top: 5px;
+    margin-top: 76px;
+    margin-left: 10px;
     position: fixed;
 }
 
@@ -77,4 +89,8 @@ p.row.legend_row {
 
 .map_legend_text {
     display: block;
+}
+
+.legend_row_span {
+    min-width: 80px;
 }

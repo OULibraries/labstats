@@ -74,11 +74,9 @@ Drupal.behaviors.oulib_bento = {
             $(".modal_header_text").text('Computer Map for '+section_name);
 
             setTimeout(function(){
-                var mapWidth = $('#mapTarget').width();
-                mapWidth = mapWidth + 15;
-                var body_width = $('.modal-body').width();
+                var body_width = parseInt($('.modal-content').width());
 
-                $('.modal-header').css('width', mapWidth);
+                $('.modal-header').css('width', body_width);
                 $('.modal_header_text').css('width', body_width);
             },1000);
         });
@@ -105,5 +103,11 @@ Drupal.behaviors.oulib_bento = {
     }
 };
 
+$(window).resize(function() {
+  var mapWidth = $('.modal-content').width();
 
+  if (mapWidth) {
+    $('.modal-header').css('width', mapWidth);
+  }
+});
 }(jQuery);
