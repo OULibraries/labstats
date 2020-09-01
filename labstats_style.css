@@ -30,8 +30,13 @@
     overflow-y: auto;
 }
 
+.modal-body {
+    margin-top: 70px;
+}
+
 .legend_row {
     margin-top: 5px;
+    position: fixed;
 }
 
 .content-border {
