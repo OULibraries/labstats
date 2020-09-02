@@ -75,11 +75,7 @@ Drupal.behaviors.oulib_bento = {
 
             setTimeout(function(){
                 var body_width = parseInt($('.modal-content').width());
-                var map_width = parseInt($('#mapTarget').width());
-                var useWidth = map_width < body_width ? map_width : body_width;
-
-                $('.modal-header').css('width', useWidth);
-                //$('.modal_header_text').css('width', body_width);
+                $('.modal-header').css('width', body_width);
             },500);
         });
 
@@ -107,11 +103,9 @@ Drupal.behaviors.oulib_bento = {
 
 $(window).resize(function() {
     var body_width = $('.modal-content').width();
-    var map_width = parseInt($('#mapTarget').width());
 
-    if (body_width && map_width) {
-        var useWidth = map_width < body_width ? map_width : body_width;
-        $('.modal-header').css('width', useWidth);
+    if (body_width) {
+        $('.modal-header').css('width', body_width);
     }
 });
 }(jQuery);
