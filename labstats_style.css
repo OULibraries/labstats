@@ -18,11 +18,13 @@
 }
 
 .modal {
-    overflow-y: initial !important;
+    overflow-y:hidden !important;
 }
 
 .modal-header {
     position: fixed;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .modal-content {
