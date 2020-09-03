@@ -96,3 +96,20 @@ p.row.legend_row {
 .legend_row_span {
     min-width: 80px;
 }
+
+.view-more-labstats th {
+    border-top: 1px solid #cecece !important;
+}
+
+.view-more-labstats tr {
+    border-left: 1px solid #cecece;
+    border-right: 1px solid #cecece;
+}
+
+.view-more-labstats .views-row-last {
+    border-bottom: 1px solid #cecece;
+}
+
+.view-more-labstats table h2 {
+    white-space: nowrap;
+}
