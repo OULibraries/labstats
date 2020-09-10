@@ -33,7 +33,7 @@ class labstats_stats_plugin_query extends views_plugin_query {
     $ini = ini_set("soap.wsdl_cache_enabled", "0");
 
 
-    $url = 'http://labstats.ou.edu/api/public/GetPublicApiData/1001';
+    $url = 'http://labstats.ou.edu/api/public/GetPublicApiData/1002';
 
     $opts = array(
       'http' =>
