@@ -34,7 +34,7 @@ Drupal.behaviors.oulib_bento = {
                     mapID = 1050;
                     section_name = "Learning Lab";
                     break;
-                case "EIC":
+                case "Bizzell":
                     mapID = 1051;
                     break;
                 case "Engineering":
@@ -48,10 +48,10 @@ Drupal.behaviors.oulib_bento = {
                     mapID = 1053;
                     break;
                     section_name = "Fine Arts";
-                case "Geology":
+                case "Youngblood":
                     mapID = 1054;
                     break;
-                case "HCLC":
+                case "Helmerich":
                     mapID = 1052;
                     break;
                 default:
