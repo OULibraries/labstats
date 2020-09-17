@@ -64,11 +64,19 @@ class labstats_stats_plugin_query extends views_plugin_query {
     $totalOff = $jsondump->Offline;
     $totalTotal = $jsondump->Total;
     $totalUnavailable = 0;
-
+    $filter = ($view->display_handler->handlers['filter']['groupName']->value) ?? '' ;
+    $filterArray = explode(',', $filter);
+    $allTotal = 0;
+    $selectedInUse = 0;
+    $totalsCheck = $view->display_handler->display->display_options['fields'];
 //    //loop through results...we don't want what they don't ask for
 //    //so if it's not what they entered in the query settings
 //    //then we just continue on to the next one
     foreach ($jsondump->Groups as $entry){
+      if($filter!='' && (!in_array($entry->Label, $filterArray))) {continue;}
+      $allTotal = $allTotal + $entry->Available;
+      $selectedInUse = $selectedInUse + $entry->InUse;
+      if (array_key_exists('allTotals', $totalsCheck) || array_key_exists('selectedInUse', $totalsCheck)) {continue;}
       $row = new stdClass();
       $row->groupName = isset($entry->Label) ? $entry->Label : '';
       $row->offCount = isset($entry->Offline) ? $entry->Offline : '-';
@@ -85,6 +93,8 @@ class labstats_stats_plugin_query extends views_plugin_query {
     $row->totalTotal = $totalTotal;
     $row->totalUnavailable = $totalUnavailable;
     $row->totalPercent = floor(($totalInUse/$totalTotal) * 100);
+    $row->allTotal = $allTotal;
+    $row->selectedInUse = $selectedInUse;
     $view->result[] = $row;
   }
 }
