@@ -10,3 +10,4 @@ files[] = handlers/labstats_stats_handler_field.inc
 files[] = plugins/labstats_stats_plugin_query.inc
 files[] = labstats_stats.js
 files[] = labstats_style.css
+files[] = labstats_stats_handler_filter_id.inc

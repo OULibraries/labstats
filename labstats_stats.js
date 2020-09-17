@@ -34,7 +34,7 @@ Drupal.behaviors.oulib_bento = {
                     mapID = 1050;
                     section_name = "Learning Lab";
                     break;
-                case "EIC":
+                case "Bizzell":
                     mapID = 1051;
                     break;
                 case "Engineering":
@@ -48,10 +48,10 @@ Drupal.behaviors.oulib_bento = {
                     mapID = 1053;
                     break;
                     section_name = "Fine Arts";
-                case "Geology":
+                case "Youngblood":
                     mapID = 1054;
                     break;
-                case "HCLC":
+                case "Helmerich":
                     mapID = 1052;
                     break;
                 default:
@@ -74,13 +74,9 @@ Drupal.behaviors.oulib_bento = {
             $(".modal_header_text").text('Computer Map for '+section_name);
 
             setTimeout(function(){
-                var mapWidth = $('#mapTarget').width();
-                mapWidth = mapWidth + 15;
-                var body_width = $('.modal-body').width();
-
-                $('.modal-header').css('width', mapWidth);
-                $('.modal_header_text').css('width', body_width);
-            },1000);
+                var body_width = parseInt($('.modal-content').width());
+                $('.modal-header').css('width', body_width);
+            },500);
         });
 
         // Click the ok button to close the modal
@@ -105,5 +101,11 @@ Drupal.behaviors.oulib_bento = {
     }
 };
 
+$(window).resize(function() {
+    var body_width = $('.modal-content').width();
 
+    if (body_width) {
+        $('.modal-header').css('width', body_width);
+    }
+});
 }(jQuery);
