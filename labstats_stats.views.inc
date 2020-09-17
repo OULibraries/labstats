@@ -41,6 +41,9 @@ function labstats_stats_views_data() {
     'field' => array(
       'handler' => 'labstats_stats_handler_field',
     ),
+      'filter' => array(
+          'handler' => 'labstats_stats_handler_filter_id',
+      ),
   );
   $data['labstats_stats']['groupDescription'] = array(
     'title' => t('Group Description'),
@@ -136,6 +139,20 @@ function labstats_stats_views_data() {
   $data['labstats_stats']['offCount'] = array(
     'title' => t('Off Count'),
     'help' => t('The number of units turned off'),
+    'field' => array(
+      'handler' => 'labstats_stats_handler_field',
+    ),
+  );
+  $data['labstats_stats']['allTotal'] = array(
+    'title' => t('Selected Available'),
+    'help' => t('The number of Available units in all the selected areas'),
+    'field' => array(
+      'handler' => 'labstats_stats_handler_field',
+    ),
+  );
+  $data['labstats_stats']['selectedInUse'] = array(
+    'title' => t('Selected In Use'),
+    'help' => t('The number of In-Use units in all the selected areas'),
     'field' => array(
       'handler' => 'labstats_stats_handler_field',
     ),
